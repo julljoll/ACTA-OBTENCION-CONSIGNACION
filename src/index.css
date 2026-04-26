@@ -123,7 +123,7 @@
     margin: 0.75in;
   }
   
-  body {
+  body, .min-h-screen {
     background: white !important;
     color: black !important;
     filter: grayscale(100%) !important;
@@ -132,11 +132,11 @@
     font-family: Arial, Helvetica, sans-serif !important;
   }
 
-  .no-print {
-    display: none !important;
-  }
-
-  .win95-titlebar {
+  .no-print, 
+  .win95-titlebar,
+  .win95-button, 
+  .win95-button-sm,
+  footer {
     display: none !important;
   }
 
@@ -145,6 +145,7 @@
     margin: 0 !important;
     max-width: none !important;
     width: 100% !important;
+    background: white !important;
   }
 
   .print-container-window {
@@ -159,7 +160,7 @@
   /* Formal document sections */
   .section-group {
     background: white !important;
-    border: 1pt solid #ccc !important; /* Lighter border for document feel */
+    border: 1pt solid #ccc !important; 
     margin-bottom: 6pt !important;
     padding: 10pt 6pt 4pt 6pt !important;
     border-radius: 0 !important;

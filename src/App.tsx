@@ -161,11 +161,11 @@ export default function App() {
 
 
   return (
-    <div className="min-h-screen bg-[#008080] p-4 sm:p-8 flex items-center justify-center overflow-auto">
-      <div className="print-container-wrapper w-full max-w-[8.5in] relative">
-        <div className="print-container-window">
+    <div className="min-h-screen bg-[#008080] p-4 sm:p-8 flex items-center justify-center overflow-auto print:bg-white print:p-0">
+      <div className="print-container-wrapper w-full max-w-[8.5in] relative print:max-w-none print:w-full">
+        <div className="print-container-window print:border-none print:shadow-none">
           {/* Win95 Title Bar */}
-          <div className="win95-titlebar mb-4">
+          <div className="win95-titlebar mb-4 print:hidden">
             <div className="flex items-center space-x-2">
               <Database className="w-3 h-3 text-white" />
               <span className="text-[11px]">Acta_Forense_v1.5.exe</span>
@@ -323,17 +323,9 @@ export default function App() {
 
             {/* Win95 Footer Taskbar */}
             <div className="mt-8 border-t-2 border-white pt-4 flex flex-wrap justify-end gap-2 no-print">
-              <button onClick={handleSaveAndPrint} className="win95-button">
-                <Save className="w-3.5 h-3.5 mr-2" />
-                <span>Grabar</span>
-              </button>
-              <button onClick={handleDownloadPDF} className="win95-button">
-                <FileDown className="w-3.5 h-3.5 mr-2" />
-                <span>Exportar</span>
-              </button>
               <button onClick={handlePrint} className="win95-button bg-[#ffffcc] font-bold">
                 <Printer className="w-3.5 h-3.5 mr-2" />
-                <span>Imprimir</span>
+                <span>Imprimir Documento</span>
               </button>
             </div>
           </div>
