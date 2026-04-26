@@ -162,7 +162,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#008080] p-4 sm:p-8 flex items-center justify-center overflow-auto">
-      <div className="print-container-wrapper w-full max-w-[8.5in]">
+      <div className="print-container-wrapper w-full max-w-[8.5in] relative">
         <div className="print-container-window">
           {/* Win95 Title Bar */}
           <div className="win95-titlebar mb-4">
@@ -177,32 +177,32 @@ export default function App() {
             </div>
           </div>
 
-          <div className="p-3 sm:p-6">
+          <div className="p-3 sm:p-6 print:p-0">
             {/* Header / Expediente */}
             <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-4">
               <div className="space-y-2">
-                <div className="win95-sunken p-2 bg-white max-w-xs shadow-[inset_1px_1px_#000000]">
+                <div className="win95-sunken p-2 bg-white max-w-xs shadow-[inset_1px_1px_#000000] print:border-l-4 print:border-black print:pl-4 print:mb-2 print:border-none print:shadow-none">
                   <p className="text-[9px] font-bold text-gray-500 uppercase mb-1">Registro de Expediente No.</p>
-                  <p className="font-mono text-sm font-bold text-black border-l-4 border-[#000080] pl-2">
+                  <p className="font-mono text-sm font-bold text-black border-l-4 border-[#000080] pl-2 print:border-black print:text-lg">
                     EXP-{formData.cedulaPrefix}{formData.cedula.replace(/[^0-9]/g, '') || '00000000'}
                   </p>
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold bg-[#000080] text-white px-2 inline-block">ACTA DE OBTENCIÓN POR CONSIGNACIÓN</h2>
-                  <p className="text-[9px] text-black font-bold uppercase mt-1">LABORATORIO DE INFORMÁTICA FORENSE Y CIBERSEGURIDAD SHA256.US</p>
+                  <h2 className="text-lg font-bold bg-[#000080] text-white px-2 inline-block print:bg-transparent print:text-black print:p-0 print:text-xl">ACTA DE OBTENCIÓN POR CONSIGNACIÓN</h2>
+                  <p className="text-[9px] text-black font-bold uppercase mt-1 print:text-[10px]">LABORATORIO DE INFORMÁTICA FORENSE Y CIBERSEGURIDAD SHA256.US</p>
                 </div>
               </div>
 
-              <div className="win95-raised p-2 text-right w-full md:w-56">
-                <h1 className="text-2xl font-black italic tracking-tighter text-[#000080] leading-none">
+              <div className="win95-raised p-2 text-right w-full md:w-56 print:border-none print:w-auto">
+                <h1 className="text-2xl font-black italic tracking-tighter text-[#000080] leading-none print:text-black">
                   SHA256<span className="text-black">.US</span>
                 </h1>
-                <div className="h-[2px] bg-[#000080] my-1"></div>
-                <p className="text-[9px] text-black font-bold uppercase">Scientific Analysis</p>
+                <div className="h-[2px] bg-[#000080] my-1 print:bg-black"></div>
+                <p className="text-[9px] text-black font-bold uppercase print:text-[9px]">Scientific Analysis</p>
               </div>
             </div>
 
-            <form ref={formRef} className="space-y-3">
+            <form ref={formRef} className="space-y-3 print:space-y-1">
               {/* Section I */}
               <FormSection title="I. Identificación del Sujeto" icon={ShieldCheck}>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">

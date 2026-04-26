@@ -128,6 +128,7 @@
     color: black !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    font-family: Arial, Helvetica, sans-serif !important;
   }
 
   .no-print {
@@ -154,52 +155,92 @@
     padding: 0 !important;
   }
 
-  /* Compacting sections for print */
+  /* Formal document sections */
   .section-group {
     background: white !important;
-    border: 1pt solid #000 !important;
-    margin-bottom: 8pt !important;
-    padding: 8pt 4pt 4pt 4pt !important;
-    padding-top: 12pt !important;
+    border: 1pt solid #ccc !important; /* Lighter border for document feel */
+    margin-bottom: 6pt !important;
+    padding: 10pt 6pt 4pt 6pt !important;
+    border-radius: 0 !important;
+    position: relative !important;
   }
 
   .section-label {
     background: white !important;
-    top: -8pt !important;
-    font-size: 10px !important;
+    top: -7pt !important;
+    font-size: 9px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #333 !important;
   }
 
   .label-text {
-    font-size: 10px !important;
+    font-size: 9px !important;
     margin-bottom: 1pt !important;
+    color: #555 !important;
+    text-transform: uppercase !important;
+    font-weight: bold !important;
   }
 
   .input-container {
     background: white !important;
-    border: 0.5pt solid #888 !important;
-    padding: 1pt 2pt !important;
+    border: none !important;
+    border-bottom: 0.5pt solid #999 !important; /* Bottom line only for formal documents */
+    padding: 0 0 1pt 0 !important;
+    margin-bottom: 4pt !important;
   }
 
   .input-field-clean {
     color: black !important;
     font-weight: bold !important;
-    font-size: 10px !important;
+    font-size: 11px !important;
   }
 
   .signature-box {
-    border: 1pt solid #000 !important;
-    background: white !important;
-    height: 60pt !important;
-  }
-
-  .win95-raised, .win95-sunken {
     border: 0.5pt solid #000 !important;
     background: white !important;
-    box-shadow: none !important;
+    height: 50pt !important;
   }
 
-  .mb-8 { margin-bottom: 12pt !important; }
-  .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 6pt !important; }
-  .pt-6 { padding-top: 6pt !important; }
-  .mt-8 { margin-top: 12pt !important; }
+  /* Reset win95 utility classes for print */
+  .win95-raised, .win95-sunken {
+    border: none !important;
+    background: white !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .win95-sunken {
+    border-left: 3pt solid #00080 !important;
+    padding-left: 5pt !important;
+  }
+
+  /* Compact spacing for single page */
+  .mb-8, .mb-4 { margin-bottom: 8pt !important; }
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 4pt !important; }
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 3pt !important; }
+  .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 2pt !important; }
+  .pt-6, .pt-4 { padding-top: 4pt !important; }
+  .mt-8 { margin-top: 8pt !important; }
+  
+  /* Hide interactive elements */
+  .win95-button, .win95-button-sm {
+    display: none !important;
+  }
+
+  h1, h2 {
+    color: black !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .text-[#000080] {
+    color: black !important;
+  }
+
+  .bg-[#000080] {
+    background: #f0f0f0 !important;
+    color: black !important;
+    border: 0.5pt solid #ccc !important;
+  }
 }
