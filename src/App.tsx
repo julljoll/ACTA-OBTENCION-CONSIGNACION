@@ -179,7 +179,7 @@ export default function App() {
 
           <div className="p-3 sm:p-6 print:p-0">
             {/* Header / Expediente */}
-            <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-4 print:flex-row print:justify-between print:items-start">
               <div className="space-y-2">
                 <div className="win95-sunken p-2 bg-white max-w-xs shadow-[inset_1px_1px_#000000] print:border-l-4 print:border-black print:pl-4 print:mb-2 print:border-none print:shadow-none">
                   <p className="text-[9px] font-bold text-gray-500 uppercase mb-1">Registro de Expediente No.</p>
@@ -193,7 +193,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="win95-raised p-2 text-right w-full md:w-56 print:border-none print:w-auto">
+              <div className="win95-raised p-2 text-right w-full md:w-56 print:border-none print:w-auto print:text-right">
                 <h1 className="text-2xl font-black italic tracking-tighter text-[#000080] leading-none print:text-black">
                   SHA256<span className="text-black">.US</span>
                 </h1>
