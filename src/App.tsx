@@ -197,8 +197,6 @@ export default function App() {
                 <h1 className="text-2xl font-black italic tracking-tighter text-[#000080] leading-none print:text-black">
                   SHA256<span className="text-black">.US</span>
                 </h1>
-                <div className="h-[2px] bg-[#000080] my-1 print:bg-black"></div>
-                <p className="text-[9px] text-black font-bold uppercase print:text-[9px]">Scientific Analysis</p>
               </div>
             </div>
 
