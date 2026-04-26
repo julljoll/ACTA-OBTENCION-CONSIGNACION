@@ -214,7 +214,7 @@ export default function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <FormField label="Cédula de Identidad">
                         <div className="flex w-full items-center">
-                          <select name="cedulaPrefix" value={formData.cedulaPrefix} onChange={handleInputChange} className="bg-white border-none outline-none w-10 text-center font-bold h-full text-[12px]">
+                          <select name="cedulaPrefix" value={formData.cedulaPrefix} onChange={handleInputChange} className="bg-white border-none outline-none w-10 text-center font-bold h-full text-[12px] print:appearance-none print:w-auto print:pr-1">
                             <option value="V">V</option>
                             <option value="E">E</option>
                           </select>
@@ -225,7 +225,7 @@ export default function App() {
 
                       <FormField label="Número de Contacto">
                         <div className="flex w-full items-center">
-                          <select name="telefonoCarrier" value={formData.telefonoCarrier} onChange={handleInputChange} className="bg-white border-none outline-none w-14 text-center font-bold text-[12px]">
+                          <select name="telefonoCarrier" value={formData.telefonoCarrier} onChange={handleInputChange} className="bg-white border-none outline-none w-14 text-center font-bold text-[12px] print:appearance-none print:w-auto print:pr-1">
                             <option value="0414">0414</option>
                             <option value="0424">0424</option>
                             <option value="0412">0412</option>
@@ -237,7 +237,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-12 win95-raised bg-[#ffffcc] p-3 border-l-4 border-l-[#000080]">
+                  <div className="lg:col-span-12 win95-raised bg-[#ffffcc] p-3 border-l-4 border-l-[#000080] print:bg-white print:border-l-black print:border print:p-2">
                     <p className="text-[10px] leading-relaxed text-black italic">
                       "Yo, el arriba identificado, en pleno uso de mis facultades mentales <span className="font-bold underline">AUTORIZO EXPRESA Y VOLUNTARIAMENTE</span> su acceso, exploración y extracción forense de datos. Para ello, renuncio temporalmente a mi derecho al secreto de las comunicaciones (Ref. Arts. 48 y 60 de la Constitución de la República Bolivariana de Venezuela)."
                     </p>
@@ -307,8 +307,8 @@ export default function App() {
                   <p className="text-[11px] font-bold text-black border-t border-black pt-1">{formData.nombre || 'Nombre del Sujeto'}</p>
                 </div>
                 <div className="text-center space-y-2">
-                  <div className="signature-box bg-white font-mono text-[9px] p-2 leading-tight flex flex-col justify-end">
-                    <span className="text-gray-100 flex-1 flex items-center justify-center text-4xl">SHA</span>
+                  <div className="signature-box bg-white font-mono text-[9px] p-2 leading-tight flex flex-col justify-end print:border-black">
+                    <span className="text-gray-100 flex-1 flex items-center justify-center text-4xl print:text-gray-300">SHA</span>
                     <span className="text-black uppercase">Sello Digital de Integridad</span>
                   </div>
                   <p className="text-[11px] font-bold text-black border-t border-black pt-1">ESPECIALISTA FORENSE</p>
