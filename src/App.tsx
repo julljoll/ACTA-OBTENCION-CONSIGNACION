@@ -177,10 +177,10 @@ export default function App() {
             </div>
           </div>
 
-          <div className="p-4 sm:p-8">
+          <div className="p-3 sm:p-6">
             {/* Header / Expediente */}
-            <div className="flex flex-col md:flex-row justify-between items-start mb-8 gap-6">
-              <div className="space-y-4">
+            <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-4">
+              <div className="space-y-2">
                 <div className="win95-sunken p-2 bg-white max-w-xs shadow-[inset_1px_1px_#000000]">
                   <p className="text-[9px] font-bold text-gray-500 uppercase mb-1">Registro de Expediente No.</p>
                   <p className="font-mono text-sm font-bold text-black border-l-4 border-[#000080] pl-2">
@@ -202,11 +202,11 @@ export default function App() {
               </div>
             </div>
 
-            <form ref={formRef} className="space-y-4">
+            <form ref={formRef} className="space-y-3">
               {/* Section I */}
               <FormSection title="I. Identificación del Sujeto" icon={ShieldCheck}>
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-                  <div className="lg:col-span-12 space-y-4">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
+                  <div className="lg:col-span-12 space-y-3">
                     <FormField label="Nombre y Apellidos COMPLETOS">
                       <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('nombre', formData.nombre)} />
                     </FormField>
@@ -299,7 +299,7 @@ export default function App() {
               </FormSection>
 
               {/* Signatures */}
-              <div className="grid grid-cols-2 gap-8 pt-6 pb-2">
+              <div className="grid grid-cols-2 gap-8 pt-4 pb-1">
                 <div className="text-center space-y-2">
                   <div className="signature-box bg-white">
                     <span className="text-[10px] text-gray-300 font-bold uppercase select-none">FIRMA ELECTRÓNICA</span>

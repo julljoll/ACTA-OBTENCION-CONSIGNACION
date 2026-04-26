@@ -90,7 +90,7 @@
   }
 
   .signature-box {
-    @apply h-24 sm:h-32 flex items-center justify-center relative bg-white;
+    @apply h-20 sm:h-24 flex items-center justify-center relative bg-white;
     border: 2px solid;
     border-color: #808080 #ffffff #ffffff #808080;
   }
@@ -120,12 +120,14 @@
 @media print {
   @page {
     size: letter;
-    margin: 1cm;
+    margin: 0.5cm;
   }
   
   body {
     background: white !important;
     color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .no-print {
@@ -152,32 +154,42 @@
     padding: 0 !important;
   }
 
+  /* Compacting sections for print */
   .section-group {
     background: white !important;
     border: 1pt solid #000 !important;
-    margin-bottom: 20pt !important;
-    padding-top: 15pt !important;
+    margin-bottom: 8pt !important;
+    padding: 8pt 4pt 4pt 4pt !important;
+    padding-top: 12pt !important;
   }
 
   .section-label {
     background: white !important;
-    top: -10pt !important;
+    top: -8pt !important;
+    font-size: 10px !important;
+  }
+
+  .label-text {
+    font-size: 10px !important;
+    margin-bottom: 1pt !important;
   }
 
   .input-container {
     background: white !important;
     border: 0.5pt solid #888 !important;
+    padding: 1pt 2pt !important;
   }
 
   .input-field-clean {
     color: black !important;
     font-weight: bold !important;
+    font-size: 10px !important;
   }
 
   .signature-box {
     border: 1pt solid #000 !important;
     background: white !important;
-    height: 80pt !important;
+    height: 60pt !important;
   }
 
   .win95-raised, .win95-sunken {
@@ -185,4 +197,9 @@
     background: white !important;
     box-shadow: none !important;
   }
+
+  .mb-8 { margin-bottom: 12pt !important; }
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 6pt !important; }
+  .pt-6 { padding-top: 6pt !important; }
+  .mt-8 { margin-top: 12pt !important; }
 }
