@@ -197,125 +197,172 @@ export default function App() {
                 <h1 className="text-2xl font-black italic tracking-tighter text-[#000080] leading-none print:text-black">
                   SHA256<span className="text-black">.US</span>
                 </h1>
+                <p className="text-[9px] text-gray-500 font-mono lowercase tracking-widest mt-1 print:text-[8px]">forensic laboratory</p>
               </div>
             </div>
 
             <form ref={formRef} className="space-y-3 print:space-y-1">
               {/* Section I */}
-              <FormSection title="I. Identificación del Sujeto" icon={ShieldCheck}>
+              <FormSection title="I. DATOS DEL SOLICITANTE Y AUTORIZACIÓN" icon={ShieldCheck}>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
                   <div className="lg:col-span-12 space-y-3">
-                    <FormField label="Nombre y Apellidos COMPLETOS">
-                      <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('nombre', formData.nombre)} />
-                    </FormField>
-                    
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <FormField label="Cédula de Identidad">
+                      <FormField label="NOMBRE COMPLETO">
+                        <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('nombre', formData.nombre)} />
+                      </FormField>
+
+                      <FormField label="CÉDULA / IDENTIFICACIÓN">
                         <div className="flex w-full items-center">
                           <select name="cedulaPrefix" value={formData.cedulaPrefix} onChange={handleInputChange} className="bg-white border-none outline-none w-10 text-center font-bold h-full text-[12px] print:appearance-none print:w-auto print:pr-1">
                             <option value="V">V</option>
                             <option value="E">E</option>
                           </select>
                           <div className="w-[1px] h-4 bg-gray-400"></div>
-                          <input type="text" name="cedula" value={formData.cedula} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('cedula', formData.cedula)} flex-1 font-mono`} />
+                          <input type="text" name="cedula" value={formData.cedula} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('cedula', formData.cedula)} flex-1 font-mono pl-1`} />
                         </div>
                       </FormField>
+                    </div>
 
-                      <FormField label="Número de Contacto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <FormField label="CIUDAD">
+                        <input type="text" name="ciudad" value={formData.ciudad} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('ciudad', formData.ciudad)} />
+                      </FormField>
+
+                      <FormField label="TELÉFONO">
                         <div className="flex w-full items-center">
                           <select name="telefonoCarrier" value={formData.telefonoCarrier} onChange={handleInputChange} className="bg-white border-none outline-none w-14 text-center font-bold text-[12px] print:appearance-none print:w-auto print:pr-1">
                             <option value="0414">0414</option>
                             <option value="0424">0424</option>
                             <option value="0412">0412</option>
+                            <option value="0416">0416</option>
+                            <option value="0426">0426</option>
                           </select>
                           <div className="w-[1px] h-4 bg-gray-400"></div>
-                          <input type="text" name="telefono" value={formData.telefono} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('telefono', formData.telefono)} flex-1 font-mono`} />
+                          <input type="text" name="telefono" value={formData.telefono} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('telefono', formData.telefono)} flex-1 font-mono pl-1`} />
                         </div>
                       </FormField>
                     </div>
+                    
+                    <FormField label="DIRECCIÓN COMPLETA">
+                      <input type="text" name="direccion" value={formData.direccion} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('direccion', formData.direccion)} />
+                    </FormField>
                   </div>
 
                   <div className="lg:col-span-12 win95-raised bg-[#ffffcc] p-3 border-l-4 border-l-[#000080] print:bg-white print:border-l-black print:border print:p-2">
                     <p className="text-[10px] leading-relaxed text-black italic">
-                      "Yo, el arriba identificado, en pleno uso de mis facultades mentales <span className="font-bold underline">AUTORIZO EXPRESA Y VOLUNTARIAMENTE</span> su acceso, exploración y extracción forense de datos. Para ello, renuncio temporalmente a mi derecho al secreto de las comunicaciones (Ref. Arts. 48 y 60 de la Constitución de la República Bolivariana de Venezuela)."
+                      "Yo, el arriba identificado, en pleno uso de mis facultades mentales <span className="font-bold text-[#008080] print:text-black">AUTORIZO EXPRESA Y VOLUNTARIAMENTE</span> su acceso, exploración y extracción forense de datos. Para ello, renuncio temporalmente a mi derecho al secreto de las comunicaciones <span className="text-[#008080] print:text-black">(Ref. Arts. 48 y 60 de la Constitución de la República Bolivariana de Venezuela)</span>, única y exclusivamente a favor de los expertos designados y para los fines técnicos aquí descritos."
                     </p>
                   </div>
                 </div>
               </FormSection>
 
               {/* Section II */}
-              <FormSection title="II. Especificaciones del Hardware" icon={Database}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                  <FormField label="Fabricante">
+              <FormSection title="II. DESCRIPCIÓN DEL DISPOSITIVO (DISPOSITIVO MATRIZ)" icon={Database}>
+                <p className="text-[10px] font-bold mb-2">
+                  • Hago entrega material voluntaria del siguiente equipo bajo la figura de Obtención por Consignación.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <FormField label="MARCA">
                     <input type="text" name="marca" value={formData.marca} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('marca', formData.marca)} />
                   </FormField>
-                  <FormField label="Modelo">
+                  <FormField label="MODELO">
                     <input type="text" name="modelo" value={formData.modelo} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('modelo', formData.modelo)} />
                   </FormField>
-                  <FormField label="Número de Serial">
+                  <FormField label="COLOR">
+                    <input type="text" name="color" value={formData.color} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('color', formData.color)} />
+                  </FormField>
+
+                  <FormField label="SERIAL DE FÁBRICA">
                     <input type="text" name="serial" value={formData.serial} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('serial', formData.serial)} />
                   </FormField>
-                  <FormField label="IMEI Primary">
+                  <FormField label="IMEI 1">
                     <input type="text" name="imei1" value={formData.imei1} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('imei1', formData.imei1)} font-mono`} />
                   </FormField>
-                  <FormField label="Estado Físico">
+                  <FormField label="IMEI 2">
+                    <input type="text" name="imei2" value={formData.imei2} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('imei2', formData.imei2)} font-mono`} />
+                  </FormField>
+
+                  <FormField label="Nº TELEFÓNICO / OPERADORA">
+                    <input type="text" name="numTelefónico" value={formData.numTelefónico} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('numTelefónico', formData.numTelefónico)} font-mono`} />
+                  </FormField>
+                  <FormField label="CÓDIGO DE DESBLOQUEO (PIN/PATRÓN)">
+                    <input type="text" name="codigoDesbloqueo" value={formData.codigoDesbloqueo} onChange={handleInputChange} onFocus={onFocusClearDefault} placeholder="Ej: 1234 o descripción" className={`${getInputClass('codigoDesbloqueo', formData.codigoDesbloqueo)} font-mono`} />
+                  </FormField>
+                  <FormField label="ESTADO FÍSICO">
                     <select name="estadoFisico" value={formData.estadoFisico} onChange={handleInputChange} className="input-field-clean bg-white h-6">
-                      <option value="Optimo">Óptimo</option>
+                      <option value="Optimo">Optimo</option>
                       <option value="Regular">Regular</option>
                       <option value="Dañado">Deteriorado</option>
                     </select>
-                  </FormField>
-                  <FormField label="PIN de Acceso">
-                    <input type="text" name="codigoDesbloqueo" value={formData.codigoDesbloqueo} onChange={handleInputChange} onFocus={onFocusClearDefault} className={`${getInputClass('codigoDesbloqueo', formData.codigoDesbloqueo)} font-mono`} />
                   </FormField>
                 </div>
               </FormSection>
 
               {/* Section III */}
-              <FormSection title="III. Parámetros de Extracción" icon={Globe}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FormField label="Servicio Target">
-                    <select name="aplicacionObjeto" value={formData.aplicacionObjeto} onChange={handleInputChange} className="input-field-clean bg-white h-6">
-                      <option value="WhatsApp">WhatsApp Messenger</option>
-                      <option value="Telegram">Telegram Messenger</option>
-                      <option value="Cámara">Galería Multimedia</option>
-                      <option value="Copia Total">Copia de Seguridad FULL</option>
-                    </select>
+              <FormSection title="III. ALCANCE DE LA EXTRACCIÓN Y ANÁLISIS" icon={Globe}>
+                <p className="text-[10px] font-bold mb-2">
+                  • Solicito la aplicación de herramientas forenses para la extracción lógica/física de "Mensajes de Datos", delimitado estrictamente a:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <FormField label="APLICACIÓN OBJETO">
+                    <input type="text" name="aplicacionObjeto" value={formData.aplicacionObjeto} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('aplicacionObjeto', formData.aplicacionObjeto)} />
                   </FormField>
-                  <div className="grid grid-cols-2 gap-2">
-                    <FormField label="Fecha Inicio">
-                      <input type="date" name="fechaDesde" value={formData.fechaDesde} onChange={handleInputChange} className="input-field-clean bg-white h-6 text-[11px]" />
-                    </FormField>
-                    <FormField label="Fecha Cierre">
-                      <input type="date" name="fechaHasta" value={formData.fechaHasta} onChange={handleInputChange} className="input-field-clean bg-white h-6 text-[11px]" />
-                    </FormField>
+                  <FormField label="NÚMERO DE CONTACTO ESPECÍFICO">
+                    <input type="text" name="contactoEspecifico" value={formData.contactoEspecifico} onChange={handleInputChange} onFocus={onFocusClearDefault} className={getInputClass('contactoEspecifico', formData.contactoEspecifico)} />
+                  </FormField>
+                  <div className="grid grid-cols-[auto_1fr_auto_1fr] items-center gap-1">
+                    <span className="text-[9px] font-bold uppercase text-gray-500 whitespace-nowrap col-span-4 mb-1">RANGO DE FECHAS (DESDE - HASTA)</span>
+                    <input type="date" name="fechaDesde" value={formData.fechaDesde} onChange={handleInputChange} className="input-field-clean bg-white h-6 text-[10px] w-full border border-gray-300 p-1 print:border-b print:border-black print:border-x-0 print:border-t-0 print:rounded-none print:px-0" />
+                    <span className="text-[10px] font-bold px-1">al</span>
+                    <input type="date" name="fechaHasta" value={formData.fechaHasta} onChange={handleInputChange} className="input-field-clean bg-white h-6 text-[10px] w-full border border-gray-300 p-1 print:border-b print:border-black print:border-x-0 print:border-t-0 print:rounded-none print:px-0" />
                   </div>
                 </div>
-                <p className="text-[9px] text-gray-600 mt-2 italic px-1">
-                  * Advertencia: La extracción se ejecutará estrictamente sobre los metadatos y registros generados en el intervalo seleccionado.
-                </p>
+              </FormSection>
+
+              {/* Section IV */}
+              <FormSection title="IV. REQUERIMIENTOS TÉCNICOS Y DE PRESERVACIÓN" icon={ShieldCheck}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-start space-x-2 win95-sunken bg-white p-2 print:border-none print:shadow-none">
+                    <input type="checkbox" name="aislamiento" checked={formData.aislamiento} onChange={handleInputChange} className="mt-1" />
+                    <div>
+                      <p className="text-[10px] font-bold text-black leading-none mb-1">Aislamiento de Señal (Modo Avión/Bolsa Faraday)</p>
+                      <p className="text-[9px] text-gray-500 leading-tight">Asegura que el dispositivo no reciba datos remotos durante el análisis.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-2 win95-sunken bg-white p-2 print:border-none print:shadow-none">
+                    <input type="checkbox" name="calculoHash" checked={formData.calculoHash} onChange={handleInputChange} className="mt-1" />
+                    <div>
+                      <p className="text-[10px] font-bold text-black leading-none mb-1">Cálculo de Algoritmos de Integridad (HASH)</p>
+                      <p className="text-[9px] text-gray-500 leading-tight">Generación de huella digital SHA-256 o MD5 para cadena de custodia.</p>
+                    </div>
+                  </div>
+                </div>
               </FormSection>
 
               {/* Signatures */}
               <div className="grid grid-cols-2 gap-8 pt-4 pb-1">
                 <div className="text-center space-y-2">
-                  <div className="signature-box bg-white">
-                    <span className="text-[10px] text-gray-300 font-bold uppercase select-none">FIRMA ELECTRÓNICA</span>
+                  <div className="signature-box bg-white border-dashed border-2 flex items-start p-2">
+                    <span className="text-[9px] text-gray-500 font-bold uppercase select-none w-full text-left">FIRMA Y HUELLA (DACTILAR)</span>
                   </div>
-                  <p className="text-[11px] font-bold text-black border-t border-black pt-1">{formData.nombre || 'Nombre del Sujeto'}</p>
+                  <div>
+                    <p className="text-[11px] font-bold text-black uppercase">EL SOLICITANTE</p>
+                    <p className="text-[9px] text-gray-500 uppercase">{formData.nombre || 'JUAN PÉREZ GARCÍA'}</p>
+                  </div>
                 </div>
                 <div className="text-center space-y-2">
-                  <div className="signature-box bg-white font-mono text-[9px] p-2 leading-tight flex flex-col justify-end print:border-black">
-                    <span className="text-gray-100 flex-1 flex items-center justify-center text-4xl print:text-gray-300">SHA</span>
-                    <span className="text-black uppercase">Sello Digital de Integridad</span>
+                  <div className="signature-box bg-white border-dashed border-2 flex items-start p-2">
+                    <span className="text-[9px] text-gray-500 font-bold uppercase select-none w-full text-left">SELLO Y FIRMA INSTITUCIONAL</span>
                   </div>
-                  <p className="text-[11px] font-bold text-black border-t border-black pt-1">ESPECIALISTA FORENSE</p>
+                  <div>
+                    <p className="text-[11px] font-bold text-black uppercase">EXPERTOS FORENSES</p>
+                    <p className="text-[9px] text-gray-500">Área de Análisis de Telefonía Móvil</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-4 p-2 win95-sunken bg-gray-50 italic text-[9px] text-gray-500 leading-tight">
-                Certificación: Este documento tiene validez legal al ser consignado ante el Ministerio Público o Tribunales competentes, 
-                garantizando la integridad de la evidencia digital bajo los protocolos internacionales de cadena de custodia.
+              <div className="mt-4 text-[9px] text-gray-400">
+                Nota: Este documento tiene validez legal al ser consignado ante el Ministerio Público o Tribunales competentes.
               </div>
             </form>
 
