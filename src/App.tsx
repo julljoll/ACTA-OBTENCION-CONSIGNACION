@@ -189,7 +189,8 @@ export default function App() {
                 </div>
                 <div>
                   <h2 className="text-lg font-bold bg-[#000080] text-white px-2 inline-block print:bg-transparent print:text-black print:p-0 print:text-xl">ACTA DE OBTENCIÓN POR CONSIGNACIÓN</h2>
-                  <p className="text-[9px] text-black font-bold uppercase mt-1 print:text-[10px]">LABORATORIO DE INFORMÁTICA FORENSE Y CIBERSEGURIDAD SHA256.US</p>
+                  <p className="text-[9px] text-black font-bold mt-1 print:text-[10px] uppercase print:normal-case">Laboratorio de Informática Forense y Ciberseguridad SHA256.US</p>
+                  <p className="text-[8px] text-gray-700 mt-0.5 max-w-sm leading-tight print:text-[8px]">Avenida 6, con calle 7, Edificio Mercantil La Ceiba, primer piso, oficina Nº 8, Quibor, Municipio Jiménez del Estado Lara.</p>
                 </div>
               </div>
 
